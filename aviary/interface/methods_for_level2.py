@@ -2009,7 +2009,12 @@ class AviaryProblem(om.Problem):
             num_first = num_business = num_tourist = wing_cargo = misc_cargo = 0
 
         if phase_info is None:
+            # assume phase info to use is identical to the design mission
+            phase_info = {}
+            phase_info['pre_mission'] = self.pre_mission_info
             phase_info = self.phase_info
+            phase_info['post_mission'] = self.post_mission_info
+
         if mission_range is None:
             # mission range is sliced from a column vector numpy array, i.e. it is a len
             # 1 numpy array
@@ -2520,7 +2525,7 @@ def _load_off_design(
             # TODO is there a reason we can't use set_default() to make sure target range exists and
             #      has a value if not already in dictionary?
             try:
-                phase_info['post_mission']['target_range']
+                # phase_info['post_mission']['target_range']
                 phase_info['post_mission']['target_range'] = (mission_range, 'nmi')
             except KeyError:
                 warnings.warn('no target range to update')
