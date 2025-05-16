@@ -1454,7 +1454,7 @@ add_meta_data(
 )
 
 add_meta_data(
-    Aircraft.Design.OPERATING_MASS,
+    Mission.Summary.OPERATING_MASS,
     meta_data=_MetaData,
     # TODO: check with Aviary and GASPy engineers to ensure these are indeed
     # defined the same way
@@ -1723,7 +1723,7 @@ add_meta_data(
 )
 
 add_meta_data(
-    Aircraft.Design.ZERO_FUEL_MASS,
+    Mission.Summary.ZERO_FUEL_MASS,
     meta_data=_MetaData,
     historical_name={
         'GASP': None,
@@ -7076,7 +7076,7 @@ add_meta_data(
 )
 
 add_meta_data(
-    Mission.Design.FUEL_MASS,
+    Mission.Summary.FUEL_MASS,
     meta_data=_MetaData,
     historical_name={
         'GASP': 'INGASP.WFADES',

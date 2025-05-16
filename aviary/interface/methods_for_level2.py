@@ -1016,7 +1016,7 @@ class AviaryProblem(om.Problem):
             'mass_constraint',
             ecomp,
             promotes_inputs=[
-                ('operating_empty_mass', Aircraft.Design.OPERATING_MASS),
+                ('operating_empty_mass', Mission.Summary.OPERATING_MASS),
                 ('overall_fuel', Mission.Summary.TOTAL_FUEL_MASS),
                 ('payload_mass', payload_mass_src),
                 ('initial_mass', Mission.Summary.GROSS_MASS),

@@ -49,7 +49,7 @@ class OASWingWeightBuilder(av.SubsystemBuilderBase):
                 num_box_cp=51,
             ),
             promotes_inputs=[
-                ('fuel', av.Mission.Design.FUEL_MASS),
+                ('fuel', av.Mission.Summary.FUEL_MASS),
             ],
             promotes_outputs=[('wing_weight', av.Aircraft.Wing.MASS)],
         )

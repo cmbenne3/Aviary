@@ -753,6 +753,9 @@ class Mission:
         RANGE = 'mission:summary:range'
         RESERVE_FUEL_BURNED = 'mission:summary:reserve_fuel_burned'
         TOTAL_FUEL_MASS = 'mission:summary:total_fuel_mass'
+        OPERATING_MASS = 'mission:summary:operating_mass'
+        ZERO_FUEL_MASS = 'mission:summary:zero_fuel_mass'
+        FUEL_MASS = 'mission:summary:fuel_mass'
 
     class Takeoff:
         # These are values which have to do with takeoff
