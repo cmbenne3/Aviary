@@ -147,11 +147,6 @@ class PhaseBuilderBase(ABC):
         self.is_analytic_phase = is_analytic_phase
         self.num_nodes = num_nodes
 
-        if external_subsystems is None:
-            external_subsystems = []
-
-        self.external_subsystems = external_subsystems
-
         if meta_data is None:
             meta_data = self.default_meta_data
 
