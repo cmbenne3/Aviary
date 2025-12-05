@@ -27,6 +27,8 @@ class L3SubsystemsGroup(om.Group):
         self.code_origin_overrides = []
 
 
+shooting = True
+
 prob = av.AviaryProblem()
 
 #####
@@ -185,7 +187,12 @@ for phase_idx, phase_name in enumerate(phases):
     user_options = FlightPhaseOptions(user_options)
     num_segments = user_options['num_segments']
     order = user_options['order']
-    transcription = dm.Radau(num_segments=num_segments, order=order, compressed=True)
+
+    if shooting:
+        transcription = dm.PicardShooting(num_segments=3, solve_segments='forward')
+    else:
+        transcription = dm.Radau(num_segments=num_segments, order=order, compressed=True)
+
     kwargs = {
         'external_subsystems': external_subsystems,
         'meta_data': prob.meta_data,
@@ -254,6 +261,11 @@ for phase_idx, phase_name in enumerate(phases):
         phase, user_options, 'distance', Dynamic.Mission.DISTANCE, Dynamic.Mission.DISTANCE_RATE
     )
 
+    if shooting:
+        # add altitude and mach as states for shooting
+        phase.add_state(Dynamic.Atmosphere.MACH, rate_source=Dynamic.Atmosphere.MACH_RATE)
+        phase.add_state(Dynamic.Mission.ALTITUDE, rate_source=Dynamic.Mission.ALTITUDE_RATE)
+
     def add_l3_control(
         phase, options, name, target, rate_targets=None, rate2_targets=None, add_constraints=True
     ):
@@ -312,25 +324,41 @@ for phase_idx, phase_name in enumerate(phases):
         if opt and final is not None:
             phase.add_boundary_constraint(target, loc='final', equals=final, units=units, ref=ref)
 
-    add_l3_control(
-        phase,
-        user_options,
-        'mach',
-        target=Dynamic.Atmosphere.MACH,
-        rate_targets=[Dynamic.Atmosphere.MACH_RATE],
-        rate2_targets=None,
-        add_constraints=Dynamic.Atmosphere.MACH not in constraints,
-    )
+    if shooting:
+        phase.add_control(
+            name=Dynamic.Mission.ALTITUDE_RATE,
+            opt=True,
+            lower=-150,
+            upper=150,
+            ref=15,
+        )
+        phase.add_control(
+            name=Dynamic.Atmosphere.MACH_RATE,
+            opt=True,
+            lower=-0.06,
+            upper=0.06,
+            ref=0.003,
+        )
+    else:
+        add_l3_control(
+            phase,
+            user_options,
+            'mach',
+            target=Dynamic.Atmosphere.MACH,
+            rate_targets=[Dynamic.Atmosphere.MACH_RATE],
+            rate2_targets=None,
+            add_constraints=Dynamic.Atmosphere.MACH not in constraints,
+        )
 
-    add_l3_control(
-        phase,
-        user_options,
-        'altitude',
-        target=Dynamic.Mission.ALTITUDE,
-        rate_targets=[Dynamic.Mission.ALTITUDE_RATE],
-        rate2_targets=None,
-        add_constraints=Dynamic.Mission.ALTITUDE not in constraints,
-    )
+        add_l3_control(
+            phase,
+            user_options,
+            'altitude',
+            target=Dynamic.Mission.ALTITUDE,
+            rate_targets=[Dynamic.Mission.ALTITUDE_RATE],
+            rate2_targets=None,
+            add_constraints=Dynamic.Mission.ALTITUDE not in constraints,
+        )
     if throttle_enforcement == 'control':
         add_l3_control(
             phase,
@@ -601,13 +629,15 @@ phases = list(prob.model.phase_info.keys())
 prob.traj.link_phases(phases, ['time'], ref=None, connected=True)
 prob.traj.link_phases(phases, [Dynamic.Vehicle.MASS], ref=None, connected=True)
 prob.traj.link_phases(phases, [Dynamic.Mission.DISTANCE], ref=None, connected=True)
-
 prob.model.connect(
     f'traj.descent.timeseries.distance',
     Mission.Summary.RANGE,
     src_indices=[-1],
     flat_src_indices=True,
 )
+if shooting:
+    prob.traj.link_phases(phases, [Dynamic.Atmosphere.MACH], ref=None, connected=True)
+    prob.traj.link_phases(phases, [Dynamic.Mission.ALTITUDE], ref=None, connected=True)
 #### End of link_phases
 
 #####
@@ -721,67 +751,149 @@ with warnings.catch_warnings():
     om.Problem.setup(prob, check=False)
 
 # set initial guesses manually
-control_keys = ['mach', 'altitude']
-state_keys = ['mass', Dynamic.Mission.DISTANCE]
-guesses = {}
-guesses['mach_climb'] = ([0.2, 0.72], 'unitless')
-guesses['altitude_climb'] = ([0, 32000.0], 'ft')
-guesses['time_climb'] = ([0, 3840.0], 's')
-guesses['mach_cruise'] = ([0.72, 0.72], 'unitless')
-guesses['altitude_cruise'] = ([32000.0, 34000.0], 'ft')
-guesses['time_cruise'] = ([3840.0, 3390.0], 's')
-guesses['mach_descent'] = ([0.72, 0.36], 'unitless')
-guesses['altitude_descent'] = ([34000.0, 500.0], 'ft')
-guesses['time_descent'] = ([7230.0, 1740.0], 's')
+if shooting:
+    control_keys = ['mach_rate', 'altitude_rate']
+    state_keys = [
+        'mass',
+        Dynamic.Mission.DISTANCE,
+        Dynamic.Mission.ALTITUDE,
+        Dynamic.Atmosphere.MACH,
+    ]
+    guesses = {}
+    guesses['mach_rate_climb'] = ([0.005, 0.0], '1/s')
+    guesses['altitude_rate_climb'] = ([1000.0, 10.0], 'ft/min')
+    guesses['time_climb'] = ([0, 3840.0], 's')
+    guesses['mach_rate_cruise'] = ([0, 0], 'unitless')
+    guesses['altitude_rate_cruise'] = ([10.0, 10.0], 'ft')
+    guesses['time_cruise'] = ([3840.0, 3390.0], 's')
+    guesses['mach_rate_descent'] = ([-0.005, -0.02], 'unitless')
+    guesses['altitude_rate_descent'] = ([-100, -1000], 'ft')
+    guesses['time_descent'] = ([7230.0, 1740.0], 's')
 
-prob.set_val('traj.climb.t_initial', guesses['time_climb'][0][0], units='s')
-prob.set_val('traj.climb.t_duration', guesses['time_climb'][0][1], units='s')
-prob.set_val(
-    'traj.climb.controls:mach',
-    prob.model.traj.phases.climb.interp('mach', xs=[-1, 1], ys=guesses['mach_climb'][0]),
-    units='unitless',
-)
-prob.set_val(
-    'traj.climb.controls:altitude',
-    prob.model.traj.phases.climb.interp('altitude', xs=[-1, 1], ys=guesses['altitude_climb'][0]),
-    units='ft',
-)
+    prob.set_val('traj.climb.t_initial', guesses['time_climb'][0][0], units='s')
+    prob.set_val('traj.climb.t_duration', guesses['time_climb'][0][1], units='s')
+    prob.set_val(
+        'traj.climb.controls:mach_rate',
+        prob.model.traj.phases.climb.interp(
+            'mach_rate', xs=[-1, 1], ys=guesses['mach_rate_climb'][0]
+        ),
+        units='1/s',
+    )
+    prob.set_val(
+        'traj.climb.controls:altitude_rate',
+        prob.model.traj.phases.climb.interp(
+            'altitude_rate', xs=[-1, 1], ys=guesses['altitude_rate_climb'][0]
+        ),
+        units='ft/min',
+    )
+    prob.set_val('traj.climb.states:mass', 175400, units='lbm')
+    prob.set_val('traj.climb.states:distance', 0, units='km')
+    prob.set_val('traj.climb.states:altitude', 0, units='ft')
+    prob.set_val('traj.climb.states:mach', 0.2, units='unitless')
 
-prob.set_val('traj.cruise.t_initial', guesses['time_cruise'][0][0], units='s')
-prob.set_val('traj.cruise.t_duration', guesses['time_cruise'][0][1], units='s')
-prob.set_val(
-    'traj.cruise.controls:mach',
-    prob.model.traj.phases.cruise.interp('mach', xs=[-1, 1], ys=guesses['mach_cruise'][0]),
-    units='unitless',
-)
-prob.set_val(
-    'traj.cruise.controls:altitude',
-    prob.model.traj.phases.cruise.interp('altitude', xs=[-1, 1], ys=guesses['altitude_cruise'][0]),
-    units='ft',
-)
+    prob.set_val('traj.cruise.t_initial', guesses['time_cruise'][0][0], units='s')
+    prob.set_val('traj.cruise.t_duration', guesses['time_cruise'][0][1], units='s')
+    prob.set_val(
+        'traj.cruise.controls:mach_rate',
+        prob.model.traj.phases.cruise.interp(
+            'mach_rate', xs=[-1, 1], ys=guesses['mach_rate_cruise'][0]
+        ),
+        units='1/s',
+    )
+    prob.set_val(
+        'traj.cruise.controls:altitude_rate',
+        prob.model.traj.phases.cruise.interp(
+            'altitude_rate', xs=[-1, 1], ys=guesses['altitude_rate_cruise'][0]
+        ),
+        units='ft/min',
+    )
+    prob.set_val('traj.descent.t_initial', guesses['time_descent'][0][0], units='s')
+    prob.set_val('traj.descent.t_duration', guesses['time_descent'][0][1], units='s')
+    prob.set_val(
+        'traj.descent.controls:mach_rate',
+        prob.model.traj.phases.descent.interp(
+            'mach_rate', xs=[-1, 1], ys=guesses['mach_rate_descent'][0]
+        ),
+        units='1/s',
+    )
+    prob.set_val(
+        'traj.descent.controls:altitude_rate',
+        prob.model.traj.phases.descent.interp(
+            'altitude_rate', xs=[-1, 1], ys=guesses['altitude_rate_descent'][0]
+        ),
+        units='ft/min',
+    )
 
-prob.set_val('traj.descent.t_initial', guesses['time_descent'][0][0], units='s')
-prob.set_val('traj.descent.t_duration', guesses['time_descent'][0][1], units='s')
-prob.set_val(
-    'traj.descent.controls:mach',
-    prob.model.traj.phases.climb.interp('mach', xs=[-1, 1], ys=guesses['mach_descent'][0]),
-    units='unitless',
-)
-prob.set_val(
-    'traj.descent.controls:altitude',
-    prob.model.traj.phases.climb.interp('altitude', xs=[-1, 1], ys=guesses['altitude_descent'][0]),
-    units='ft',
-)
-prob.set_val('traj.climb.states:mass', 125000, units='lbm')
-prob.set_val('traj.cruise.states:mass', 125000, units='lbm')
-prob.set_val('traj.descent.states:mass', 125000, units='lbm')
+
+else:
+    control_keys = ['mach', 'altitude']
+    state_keys = ['mass', Dynamic.Mission.DISTANCE]
+    guesses = {}
+    guesses['mach_climb'] = ([0.2, 0.72], 'unitless')
+    guesses['altitude_climb'] = ([0, 32000.0], 'ft')
+    guesses['time_climb'] = ([0, 3840.0], 's')
+    guesses['mach_cruise'] = ([0.72, 0.72], 'unitless')
+    guesses['altitude_cruise'] = ([32000.0, 34000.0], 'ft')
+    guesses['time_cruise'] = ([3840.0, 3390.0], 's')
+    guesses['mach_descent'] = ([0.72, 0.36], 'unitless')
+    guesses['altitude_descent'] = ([34000.0, 500.0], 'ft')
+    guesses['time_descent'] = ([7230.0, 1740.0], 's')
+
+    prob.set_val('traj.climb.t_initial', guesses['time_climb'][0][0], units='s')
+    prob.set_val('traj.climb.t_duration', guesses['time_climb'][0][1], units='s')
+    prob.set_val(
+        'traj.climb.controls:mach',
+        prob.model.traj.phases.climb.interp('mach', xs=[-1, 1], ys=guesses['mach_climb'][0]),
+        units='unitless',
+    )
+    prob.set_val(
+        'traj.climb.controls:altitude',
+        prob.model.traj.phases.climb.interp(
+            'altitude', xs=[-1, 1], ys=guesses['altitude_climb'][0]
+        ),
+        units='ft',
+    )
+
+    prob.set_val('traj.cruise.t_initial', guesses['time_cruise'][0][0], units='s')
+    prob.set_val('traj.cruise.t_duration', guesses['time_cruise'][0][1], units='s')
+    prob.set_val(
+        'traj.cruise.controls:mach',
+        prob.model.traj.phases.cruise.interp('mach', xs=[-1, 1], ys=guesses['mach_cruise'][0]),
+        units='unitless',
+    )
+    prob.set_val(
+        'traj.cruise.controls:altitude',
+        prob.model.traj.phases.cruise.interp(
+            'altitude', xs=[-1, 1], ys=guesses['altitude_cruise'][0]
+        ),
+        units='ft',
+    )
+
+    prob.set_val('traj.descent.t_initial', guesses['time_descent'][0][0], units='s')
+    prob.set_val('traj.descent.t_duration', guesses['time_descent'][0][1], units='s')
+    prob.set_val(
+        'traj.descent.controls:mach',
+        prob.model.traj.phases.climb.interp('mach', xs=[-1, 1], ys=guesses['mach_descent'][0]),
+        units='unitless',
+    )
+    prob.set_val(
+        'traj.descent.controls:altitude',
+        prob.model.traj.phases.climb.interp(
+            'altitude', xs=[-1, 1], ys=guesses['altitude_descent'][0]
+        ),
+        units='ft',
+    )
+    prob.set_val('traj.climb.states:mass', 125000, units='lbm')
+    prob.set_val('traj.cruise.states:mass', 125000, units='lbm')
+    prob.set_val('traj.descent.states:mass', 125000, units='lbm')
 
 prob.set_val(Mission.Design.GROSS_MASS, 175400, units='lbm')
 prob.set_val(Mission.Summary.GROSS_MASS, 175400, units='lbm')
 
-prob.verbosity = Verbosity.BRIEF
-
+prob.verbosity = Verbosity.DEBUG
 prob.run_aviary_problem()
-
-# prob.model.list_vars(units=True, print_arrays=True)
+# prob.run_model()
+# prob.final_setup()
+with open('model_variables_l3_shoot.txt', 'w') as f:
+    prob.model.list_vars(units=True, print_arrays=True, out_stream=f)
 # prob.list_driver_vars(print_arrays=True)
