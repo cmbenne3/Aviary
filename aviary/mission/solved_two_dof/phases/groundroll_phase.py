@@ -121,6 +121,7 @@ class GroundrollPhase(PhaseBuilder):
             duration_ref=duration_ref,
         )
 
+        # self.add_state()
         phase.set_state_options(
             'time',
             rate_source='dt_dv',

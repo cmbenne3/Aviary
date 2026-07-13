@@ -95,7 +95,7 @@ phase_info = {
         'initial_guesses': {
             'distance': [(0.0, 2.0e3), 'ft'],
             'time': [(0.0, 20.0), 's'],
-            'velocity': [(1.0, 120.0), 'kn'],
+            'velocity': [(0.0, 120.0), 'kn'],
             'mass': [(175.0e3, 174.85e3), 'lbm'],
         },
     },
