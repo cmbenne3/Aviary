@@ -84,9 +84,10 @@ def register_custom_reports():
         func=overridden_variables_report,
         desc='Generates a report on the overridden variables',
         class_name='AviaryProblem',
-        method='final_setup',
+        method='run_driver',
         pre_or_post='post',
     )
+
     register_report(
         name='list_options',
         func=_list_options_report,
@@ -95,6 +96,7 @@ def register_custom_reports():
         method='run_driver',
         pre_or_post='post',
     )
+
     register_report(
         name='list_options',
         func=_list_options_report,
@@ -680,7 +682,8 @@ def _overridden_variables_group_report(prob, group, mission_name, f):
                 metadata = group.get_io_metadata('output')[abs_name]
                 units = metadata['units']
             val = group.aviary_inputs.get_val(aircraft_variable_name, units=units)
-            non_external_overridden_variables.append((aircraft_variable_name, val, units))
+            calc_val = group.get_val(abs_name, units=units)
+            non_external_overridden_variables.append((aircraft_variable_name, val, calc_val, units))
 
     if MPI and prob.comm.rank != 0:
         # All collective calls are completed. Reports only generated on rank 0.
@@ -692,15 +695,19 @@ def _overridden_variables_group_report(prob, group, mission_name, f):
 
     f.write('## Internal Overrides\n')
     if non_external_overridden_variables:
-        f.write('| Name   | Value | Units |\n')
-        f.write('| ------ |-------| ----- |\n')
+        f.write('| Name   | Override Value | Calculated Value | Units |\n')
+        f.write('| ------ |--------------- | ---------------- | ----- |\n')
         non_external_overridden_variables.sort(key=lambda x: x[0])
-        for aircraft_variable_name, val, units in non_external_overridden_variables:
+        for aircraft_variable_name, val, calc_val, units in non_external_overridden_variables:
             if isinstance(val, np.ndarray):
                 valstring = np.array2string(val, formatter={'float_kind': lambda x: f'{x:.3g}'})
             else:
                 valstring = f'{val:.3g}'
-            f.write(f'| {aircraft_variable_name} | {valstring} | {units} |\n')
+            if isinstance(calc_val, np.ndarray):
+                valstring2 = np.array2string(val, formatter={'float_kind': lambda x: f'{x:.3g}'})
+            else:
+                valstring2 = f'{val:.3g}'
+            f.write(f'| {aircraft_variable_name} | {valstring} | {valstring2} | {units} |\n')
         f.write('\n')
     else:
         f.write('No internal overrides found.\n')
