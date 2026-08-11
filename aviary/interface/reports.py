@@ -682,7 +682,7 @@ def _overridden_variables_group_report(prob, group, mission_name, f):
                 metadata = group.get_io_metadata('output')[abs_name]
                 units = metadata['units']
             val = group.aviary_inputs.get_val(aircraft_variable_name, units=units)
-            calc_val = group.get_val(abs_name, units=units)
+            calc_val = group.get_val(abs_name, units=units)[0]
             non_external_overridden_variables.append((aircraft_variable_name, val, calc_val, units))
 
     if MPI and prob.comm.rank != 0:
@@ -704,10 +704,12 @@ def _overridden_variables_group_report(prob, group, mission_name, f):
             else:
                 valstring = f'{val:.3g}'
             if isinstance(calc_val, np.ndarray):
-                valstring2 = np.array2string(val, formatter={'float_kind': lambda x: f'{x:.3g}'})
+                calc_valstring = np.array2string(
+                    calc_val, formatter={'float_kind': lambda x: f'{x:.3g}'}
+                )
             else:
-                valstring2 = f'{val:.3g}'
-            f.write(f'| {aircraft_variable_name} | {valstring} | {valstring2} | {units} |\n')
+                calc_valstring = f'{calc_val:.3g}'
+            f.write(f'| {aircraft_variable_name} | {valstring} | {calc_valstring} | {units} |\n')
         f.write('\n')
     else:
         f.write('No internal overrides found.\n')
