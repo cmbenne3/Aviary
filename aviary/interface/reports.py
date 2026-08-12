@@ -97,15 +97,6 @@ def register_custom_reports():
         pre_or_post='post',
     )
 
-    register_report(
-        name='list_options',
-        func=_list_options_report,
-        desc='Generates a report on the Problem options',
-        class_name='AviaryProblem',
-        method='run_model',
-        pre_or_post='post',
-    )
-
 
 def run_status(prob: AviaryProblem):
     """
@@ -304,7 +295,8 @@ def mission_report(prob: AviaryProblem, **kwargs):
             totals.set_val(
                 'Excess Fuel Capacity',
                 prob.get_val(
-                    f'{var_name}mission:constraints:excess_fuel_mass_capacity', units='lbm'
+                    f'{var_name}mission:constraints:excess_fuel_mass_capacity',
+                    units='lbm',
                 )[0],
                 units='lbm',
             )
@@ -698,7 +690,12 @@ def _overridden_variables_group_report(prob, group, mission_name, f):
         f.write('| Name   | Override Value | Calculated Value | Units |\n')
         f.write('| ------ |--------------- | ---------------- | ----- |\n')
         non_external_overridden_variables.sort(key=lambda x: x[0])
-        for aircraft_variable_name, val, calc_val, units in non_external_overridden_variables:
+        for (
+            aircraft_variable_name,
+            val,
+            calc_val,
+            units,
+        ) in non_external_overridden_variables:
             if isinstance(val, np.ndarray):
                 valstring = np.array2string(val, formatter={'float_kind': lambda x: f'{x:.3g}'})
             else:
