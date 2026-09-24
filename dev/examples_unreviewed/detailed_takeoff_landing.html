@@ -1008,12 +1008,12 @@ Total number of inequality constraints...............:       46
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Iterations....: 60
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.0885410726349463e+02    1.0885410726349463e+02
-Dual infeasibility......:   3.5379743024144261e-08    3.5379743024144261e-08
-Constraint violation....:   4.5245111361206607e-11    4.5245111361206607e-11
-Variable bound violation:   5.2826467644706554e-09    5.2826467644706554e-09
-Complementarity.........:   9.5409735503576251e-08    9.5409735503576251e-08
-Overall NLP error.......:   9.5409735503576251e-08    9.5409735503576251e-08
+Objective...............:   1.0885410726349454e+02    1.0885410726349454e+02
+Dual infeasibility......:   3.5379820073622170e-08    3.5379820073622170e-08
+Constraint violation....:   4.5244992937417315e-11    4.5244992937417315e-11
+Variable bound violation:   5.2826458762922357e-09    5.2826458762922357e-09
+Complementarity.........:   9.5409721304161431e-08    9.5409721304161431e-08
+Overall NLP error.......:   9.5409721304161431e-08    9.5409721304161431e-08
 
 
 Number of objective function evaluations             = 77
@@ -1023,7 +1023,7 @@ Number of inequality constraint evaluations          = 77
 Number of equality constraint Jacobian evaluations   = 64
 Number of inequality constraint Jacobian evaluations = 64
 Number of Lagrangian Hessian evaluations             = 0
-Total seconds in IPOPT                               = 34.704
+Total seconds in IPOPT                               = 34.674
 
 EXIT: Optimal Solution Found.
 
@@ -1041,7 +1041,7 @@ Optimization Problem -- Optimization using pyOpt_sparse
       Index  Name                                     Type      Lower Bound            Value      Upper Bound     Status
          41  traj.BC.controls:mach_0                     c     9.090909E-01     9.090909E-01     1.000000E+00          l
          42  traj.BC.controls:mach_1                     c     9.090909E-01     1.000000E+00     1.000000E+00          u
-         43  traj.BC.controls:altitude_0                 c     0.000000E+00    -5.274969E-38     1.000000E+00          l
+         43  traj.BC.controls:altitude_0                 c     0.000000E+00    -8.294191E-39     1.000000E+00          l
          66  traj.C_to_P2.controls:mach_0                c     7.333333E-01     7.333333E-01     1.000000E+00          l
          67  traj.C_to_P2.controls:mach_1                c     7.333333E-01     1.000000E+00     1.000000E+00          u
          69  traj.C_to_P2.controls:altitude_1            c     0.000000E+00     1.000000E+00     1.000000E+00          u
@@ -1055,7 +1055,7 @@ Optimization Problem -- Optimization using pyOpt_sparse
         172  traj.P2_to_D.controls:altitude_0            c     4.925000E-01     4.925000E-01     1.000000E+00          l
         175  traj.rotate.t_duration_0                    c     2.000000E-01     2.000002E-01     2.000000E+00          l
         196  traj.rotate.controls:mach_1                 c     9.000000E-01     1.000000E+00     1.000000E+00          u
-        197  traj.rotate.controls:angle_of_attack_0      c     0.000000E+00     6.765819E-42     1.000000E+00          l
+        197  traj.rotate.controls:angle_of_attack_0      c     0.000000E+00     1.277238E-42     1.000000E+00          l
 
    Constraints (i - inequality, e - equality)
       Index  Name                                                                        Type          Lower           Value           Upper    Status  Lagrange Multiplier (N/A)
@@ -1646,19 +1646,6 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
@@ -1691,6 +1678,169 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.GH.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.GH.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
@@ -1807,30 +1957,6 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
@@ -1852,113 +1978,74 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.GH.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
@@ -1973,30 +2060,6 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
@@ -2005,76 +2068,6 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.GH.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
@@ -2110,51 +2103,52 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
@@ -2169,6 +2163,17 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
@@ -2201,51 +2206,52 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
@@ -2257,6 +2263,30 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
@@ -2268,121 +2298,31 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.GH.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
@@ -2419,19 +2359,6 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
 </pre></div>
 </div>
@@ -3289,57 +3216,116 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.GH.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.GH.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
++  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.HI&#39; stalled after 4 iterations.
 +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
@@ -3381,6 +3367,15 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
+|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 |  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 </pre></div>
 </div>
@@ -3405,13 +3400,6 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-|  +  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
-+  NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ.rhs_all.control_iter_group&#39; failed to converge in 10 iterations.
 NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
 </pre></div>
 </div>
@@ -3451,25 +3439,25 @@ NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled
 NL: NewtonSolver &#39;NL: Newton&#39; on system &#39;traj.phases.IJ&#39; stalled after 4 iterations.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Iterations....: 52
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Iterations....: 45
 
                                    (scaled)                 (unscaled)
-Objective...............:   6.8303854298571196e+01    6.8303854298571196e+01
-Dual infeasibility......:   1.2715725614463044e-08    1.2715725614463044e-08
-Constraint violation....:   7.1926025357825008e-10    7.1926025357825008e-10
-Variable bound violation:   0.0000000000000000e+00    0.0000000000000000e+00
-Complementarity.........:   9.0916423214275610e-08    9.0916423214275610e-08
-Overall NLP error.......:   9.0916423214275610e-08    9.0916423214275610e-08
+Objective...............:   6.8303879441040408e+01    6.8303879441040408e+01
+Dual infeasibility......:   7.0624771047135903e-08    7.0624771047135903e-08
+Constraint violation....:   3.7519774063232950e-09    3.7519774063232950e-09
+Variable bound violation:   3.7519774063232950e-09    3.7519774063232950e-09
+Complementarity.........:   5.6784341780460680e-07    5.6784341780460680e-07
+Overall NLP error.......:   5.6784341780460680e-07    5.6784341780460680e-07
 
 
-Number of objective function evaluations             = 81
-Number of objective gradient evaluations             = 23
-Number of equality constraint evaluations            = 81
-Number of inequality constraint evaluations          = 81
-Number of equality constraint Jacobian evaluations   = 54
-Number of inequality constraint Jacobian evaluations = 54
+Number of objective function evaluations             = 58
+Number of objective gradient evaluations             = 16
+Number of equality constraint evaluations            = 58
+Number of inequality constraint evaluations          = 58
+Number of equality constraint Jacobian evaluations   = 47
+Number of inequality constraint Jacobian evaluations = 47
 Number of Lagrangian Hessian evaluations             = 0
-Total seconds in IPOPT                               = 100.192
+Total seconds in IPOPT                               = 96.196
 
 EXIT: Optimal Solution Found.
 
@@ -3481,15 +3469,15 @@ Optimization Problem -- Optimization using pyOpt_sparse
 
    Objectives
       Index  Name                               Value
-          0  traj.IJ.timeseries.time     6.830385E+01
+          0  traj.IJ.timeseries.time     6.830388E+01
 
    Variables (c - continuous, i - integer, d - discrete)
       Index  Name                          Type      Lower Bound            Value      Upper Bound     Status
-        100  traj.IJ.controls:altitude_2      c     0.000000E+00     0.000000E+00     1.000000E+00          l
+        100  traj.IJ.controls:altitude_2      c     0.000000E+00    -3.751977E-09     1.000000E+00          l
 
    Constraints (i - inequality, e - equality)
       Index  Name                                                              Type          Lower           Value           Upper    Status  Lagrange Multiplier (N/A)
-        162  traj.IJ.throttle[path]                                               i   0.000000E+00   -1.071926E-08    1.000000E+00         l    9.00000E+100
+        162  traj.IJ.throttle[path]                                               i   0.000000E+00   -8.521092E-09    1.000000E+00         l    9.00000E+100
 </pre></div>
 </div>
 <div class="output text_html">
@@ -3525,7 +3513,7 @@ HI Time Start    : 12.11
 HI Time End      : 51.40
 *****    Phase: IJ    *****
 IJ ALTITUDE Start: 50.00
-IJ ALTITUDE End  : 0.00
+IJ ALTITUDE End  : -0.00
 IJ DISTANCE Start: 8586.51
 IJ DISTANCE End  : 11416.97
 IJ VELOCITY Start: 99.20
