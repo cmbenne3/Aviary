@@ -703,15 +703,9 @@ Later in this example, we increase this order which will allow the optimizer to 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;subsystems&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;list_options&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;subsystems&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;list_options&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;subsystems&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;list_options&#39; not found in reports registry.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following variables have been overridden by the aircraft definition:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1791349500.970562] [runnervm8df0l:4475 :0]        ib_iface.c:1269 UCX  ERROR mana_0: iface 0x557b3a4177d0 failed to create UD QP TX wr:256 sge:6 inl:64 resp:0 RX wr:4096 sge:1 resp:0 failed: Operation not supported
+[1791349500.970846] [runnervm8df0l:4475 :0]      ucp_worker.c:1412 UCX  ERROR uct_iface_open(ud_verbs/mana_0:1) failed: Input/output error
+The following variables have been overridden by the aircraft definition:
   &#39;aircraft:design:touchdown_mass_max  152800.0  lbm
   &#39;aircraft:engine:mass  [7400.]  lbm
   &#39;aircraft:fins:mass  0.0  lbm
@@ -729,6 +723,9 @@ Later in this example, we increase this order which will allow the optimizer to 
   &#39;aircraft:wing:control_surface_area  137.0  ft**2
   &#39;aircraft:wing:wetted_area  2396.56  ft**2
   &#39;mission:takeoff:lift_over_drag  17.354  unitless
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[runnervm8df0l:04475] pml_ucx.c:313  Error: Failed to create UCP worker
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total number of variables............................:       66
@@ -749,12 +746,12 @@ Total number of inequality constraints...............:       27
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Iterations....: 22
 
                                    (scaled)                 (unscaled)
-Objective...............:   2.5497020995242901e+00    2.5497020995242901e+00
-Dual infeasibility......:   1.7762094341027145e-08    1.7762094341027145e-08
-Constraint violation....:   5.0975191217157514e-15    5.0975191217157514e-15
+Objective...............:   2.5497020995242754e+00    2.5497020995242754e+00
+Dual infeasibility......:   1.7762091718132859e-08    1.7762091718132859e-08
+Constraint violation....:   6.8029199846121247e-15    6.8029199846121247e-15
 Variable bound violation:   0.0000000000000000e+00    0.0000000000000000e+00
-Complementarity.........:   9.0944744385295153e-08    9.0944744385295153e-08
-Overall NLP error.......:   9.0944744385295153e-08    9.0944744385295153e-08
+Complementarity.........:   9.0944744385289052e-08    9.0944744385289052e-08
+Overall NLP error.......:   9.0944744385289052e-08    9.0944744385289052e-08
 
 
 Number of objective function evaluations             = 28
@@ -764,7 +761,7 @@ Number of inequality constraint evaluations          = 28
 Number of equality constraint Jacobian evaluations   = 24
 Number of inequality constraint Jacobian evaluations = 24
 Number of Lagrangian Hessian evaluations             = 0
-Total seconds in IPOPT                               = 3.946
+Total seconds in IPOPT                               = 2.733
 
 EXIT: Optimal Solution Found.
 </pre></div>
@@ -805,7 +802,7 @@ However, we see that the optimizer chose to decrease the Mach number during the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10204.477071171972
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10204.47707117192
 </pre></div>
 </div>
 </div>
@@ -818,7 +815,7 @@ However, we see that the optimizer chose to decrease the Mach number during the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22497.02099524287
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22497.020995242754
 </pre></div>
 </div>
 </div>
@@ -899,12 +896,6 @@ We’ll use the same <code class="docutils literal notranslate"><span class="pre
   &#39;mission:takeoff:lift_over_drag  17.354  unitless
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;subsystems&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;list_options&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;subsystems&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;list_options&#39; not found in reports registry.
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total number of variables............................:       66
                      variables with only lower bounds:       57
                 variables with lower and upper bounds:        9
@@ -924,11 +915,11 @@ Total number of inequality constraints...............:       27
 
                                    (scaled)                 (unscaled)
 Objective...............:   2.5637089674782128e+00    2.5637089674782128e+00
-Dual infeasibility......:   3.9054359863967947e-08    3.9054359863967947e-08
-Constraint violation....:   1.2658062625877692e-14    1.2658062625877692e-14
+Dual infeasibility......:   3.9054363014223344e-08    3.9054363014223344e-08
+Constraint violation....:   1.2652049294463975e-14    1.2652049294463975e-14
 Variable bound violation:   0.0000000000000000e+00    0.0000000000000000e+00
-Complementarity.........:   9.0971568541151744e-08    9.0971568541151744e-08
-Overall NLP error.......:   9.0971568541151744e-08    9.0971568541151744e-08
+Complementarity.........:   9.0971568541196465e-08    9.0971568541196465e-08
+Overall NLP error.......:   9.0971568541196465e-08    9.0971568541196465e-08
 
 
 Number of objective function evaluations             = 28
@@ -938,7 +929,7 @@ Number of inequality constraint evaluations          = 28
 Number of equality constraint Jacobian evaluations   = 24
 Number of inequality constraint Jacobian evaluations = 24
 Number of Lagrangian Hessian evaluations             = 0
-Total seconds in IPOPT                               = 3.729
+Total seconds in IPOPT                               = 2.584
 
 EXIT: Optimal Solution Found.
 </pre></div>
@@ -1018,12 +1009,6 @@ We’ll use the original aircraft configuration for this run.</p>
   &#39;mission:takeoff:lift_over_drag  17.354  unitless
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;subsystems&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;list_options&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;subsystems&#39; not found in reports registry.
-/home/runner/work/Aviary/Aviary/.openmdao-pixi/.pixi/envs/py313/lib/python3.13/site-packages/openmdao/utils/reports_system.py:304: OpenMDAOWarning:Report with name &#39;list_options&#39; not found in reports registry.
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total number of variables............................:       70
                      variables with only lower bounds:       57
                 variables with lower and upper bounds:       13
@@ -1057,7 +1042,7 @@ Number of inequality constraint evaluations          = 69
 Number of equality constraint Jacobian evaluations   = 51
 Number of inequality constraint Jacobian evaluations = 51
 Number of Lagrangian Hessian evaluations             = 0
-Total seconds in IPOPT                               = 9.176
+Total seconds in IPOPT                               = 6.379
 
 EXIT: Maximum Number of Iterations Exceeded.
 </pre></div>
